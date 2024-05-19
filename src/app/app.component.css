@@ -1,0 +1,57 @@
+/* Hotel container */
+.hotel-container {
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Hotel card */
+  .hotel {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hotel h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333333;
+  }
+  
+  .hotel p {
+    margin: 0;
+    font-size: 14px;
+    color: #666666;
+  }
+  
+  /* Room card */
+  .room {
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f7f7f7;
+  }
+  
+  .room p {
+    margin: 0;
+    font-size: 14px;
+    color: #333333;
+  }
+  
+  .room p strong {
+    font-weight: bold;
+  }
+  
+  /* Availability */
+  .available {
+    color: #008000;
+  }
+  
+  .not-available {
+    color: #ff0000;
+  }
+  

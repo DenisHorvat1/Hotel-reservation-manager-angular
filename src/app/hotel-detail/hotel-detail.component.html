@@ -1,1 +1,25 @@
-<p>hotel-detail works!</p>
+<!-- hotel-details.component.html -->
+<div *ngIf="hotel; else loading">
+    <div class="hotel-details">
+      <h2>{{ hotel?.name }}</h2>
+      <p><strong>Location:</strong> Latitude: {{ hotel?.latitude }}, Longitude: {{ hotel?.longitude }}</p>
+      <h3>Rooms:</h3>
+      <div *ngFor="let room of hotel?.rooms" class="room">
+        <p><strong>Type:</strong> {{ getRoomType(room.type) }}</p>
+        <p><strong>Price:</strong> {{ room.price }}</p>
+        <p *ngIf="room.isAvailable; else notAvailable" class="available">Available</p>
+        <ng-template #notAvailable><p class="not-available">Not Available</p></ng-template>
+      </div>
+      
+      <!-- 
+        <h3>Feedback:</h3>
+        <div *ngFor="let feedback of hotel?.feedback" class="feedback">
+        <p><strong>{{ feedback.user }}:</strong> {{ feedback.comment }}</p>
+      </div>-->
+      
+    </div>
+  </div>
+  <ng-template #loading>
+    <p>Loading hotel details...</p>
+  </ng-template>
+  

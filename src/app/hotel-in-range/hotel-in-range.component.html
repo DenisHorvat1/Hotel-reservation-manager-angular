@@ -1,0 +1,14 @@
+<!-- hotel-in-range.component.html -->
+<div class="range-slider">
+    <label for="range">Select Range (km):</label>
+    <input type="range" id="range" min="1" max="100" [(ngModel)]="range" (ngModelChange)="onRangeChange()">
+    <span>{{ range }} km</span>
+</div>
+  
+<div *ngIf="hotels">
+    <h2>Hotels within {{ range }} km:</h2>
+    <div *ngFor="let hotel of hotels" class="hotel">
+        <h3>{{ hotel.name }}</h3>
+        <p>Location: Latitude: {{ hotel.latitude }}, Longitude: {{ hotel.longitude }}</p>
+    </div>
+</div>

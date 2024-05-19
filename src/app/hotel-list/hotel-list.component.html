@@ -1,1 +1,8 @@
-<p>hotel-list works!</p>
+<!-- hotel-list.component.html -->
+<div class="hotel-container">
+    <div *ngFor="let hotel of hotels" class="hotel" (click)="goToHotelDetails(hotel.id)">
+      <h2>{{ hotel.name }}</h2>
+      <p><strong>Location:</strong> Latitude: {{ hotel.latitude }}, Longitude: {{ hotel.longitude }}</p>
+    </div>
+  </div>
+  
